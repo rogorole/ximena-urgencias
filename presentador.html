@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Presentador · Urgencias respiratorias</title>
+  <meta name="robots" content="noindex">
+  <link rel="preload" href="assets/fonts/spicy-rice-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/montserrat-800.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/base.css">
+  <link rel="stylesheet" href="assets/host.css">
+</head>
+<body>
+  <div id="viewport">
+    <div id="frame">
+      <div id="stage"></div>
+      <div id="overlay" hidden></div>
+    </div>
+  </div>
+
+  <div id="bar" hidden>
+    <button data-act="prev" title="Anterior (←)">◀</button>
+    <span class="info" id="bar-pos">1 / 1</span>
+    <button data-act="next" title="Siguiente (→)">▶</button>
+    <span class="sep"></span>
+    <span class="info" id="bar-status"><i class="dot"></i><span id="bar-pin">PIN</span></span>
+    <span class="info" id="bar-players">0 jugadores</span>
+    <span class="sep"></span>
+    <button data-act="join" title="Mostrar el código para unirse (Q)">Código QR</button>
+    <button data-act="index" title="Ir a cualquier parte (G)">Índice</button>
+    <button data-act="sound" id="btn-sound" title="Sonido (M)">Sonido</button>
+    <button data-act="fs" title="Pantalla completa (F)">Pantalla completa</button>
+  </div>
+
+  <div id="toasts" aria-live="polite"></div>
+
+  <div id="start" class="sunburst">
+    <div class="start-card">
+      <h1 class="display">Urgencias respiratorias</h1>
+      <p class="sub">Modo presentador</p>
+      <div class="mode" id="mode"><i class="dot"></i><span id="mode-text">Revisando conexión…</span></div>
+      <div class="start-actions">
+        <button class="btn btn-primary" id="btn-continue" hidden>Continuar partida</button>
+        <button class="btn btn-secondary" id="btn-new" disabled>Crear partida nueva</button>
+      </div>
+      <p class="keys">
+        <kbd>→</kbd> o clicker: avanzar · <kbd>←</kbd> regresar · <kbd>F</kbd> pantalla completa<br>
+        <kbd>Q</kbd> código para unirse · <kbd>G</kbd> índice · <kbd>M</kbd> sonido · <kbd>R</kbd> repetir pregunta
+      </p>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="assets/vendor/firebase-app-compat.js"></script>
+  <script src="assets/vendor/firebase-database-compat.js"></script>
+  <script src="assets/vendor/qrcode.js"></script>
+  <script src="assets/store.js"></script>
+  <script src="assets/quiz.js"></script>
+  <script src="assets/sfx.js"></script>
+  <script src="assets/host.js"></script>
+</body>
+</html>

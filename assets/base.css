@@ -1,0 +1,52 @@
+/* Tipografías y colores tomados de la presentación */
+@font-face { font-family: 'Spicy Rice'; src: url('fonts/spicy-rice-400.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Montserrat'; src: url('fonts/montserrat-500.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Montserrat'; src: url('fonts/montserrat-700.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Montserrat'; src: url('fonts/montserrat-800.woff2') format('woff2'); font-weight: 800; font-style: normal; font-display: swap; }
+
+:root {
+  --orange: #C84E27;
+  --orange-dk: #BD4025;
+  --red: #9F1920;
+  --red-2: #DD2E24;
+  --mustard: #E4B856;
+  --cream: #FFF7EC;
+  --ink: #2A0E0F;
+  --green: #1F7A3F;
+  --green-2: #2E9B57;
+
+  --optA: #FDDAD8; --optA-b: #DD2E24;
+  --optB: #D7EFDE; --optB-b: #1F7A3F;
+  --optC: #FBEBC4; --optC-b: #A8650A;
+  --optD: #DCE8F7; --optD-b: #2563A6;
+
+  --display: 'Spicy Rice', 'Arial Black', system-ui, sans-serif;
+  --body: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --shadow: 0 7px 0 rgba(90, 10, 14, 0.28);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { font-family: var(--body); color: #fff; background: var(--orange); -webkit-font-smoothing: antialiased; }
+.display { font-family: var(--display); font-weight: 400; letter-spacing: 0.01em; }
+button { font: inherit; }
+[hidden] { display: none !important; }
+
+.sunburst {
+  background-color: var(--orange);
+  background-image: repeating-conic-gradient(from 0deg at 50% 50%, var(--orange) 0deg 6deg, var(--orange-dk) 6deg 12deg);
+}
+
+/* Colores por opción */
+.o0 { --c: var(--optA); --b: var(--optA-b); }
+.o1 { --c: var(--optB); --b: var(--optB-b); }
+.o2 { --c: var(--optC); --b: var(--optC-b); }
+.o3 { --c: var(--optD); --b: var(--optD-b); }
+
+@keyframes pop { 0% { transform: scale(0.6); opacity: 0; } 70% { transform: scale(1.06); opacity: 1; } 100% { transform: scale(1); } }
+@keyframes rise { from { transform: translateY(28px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
